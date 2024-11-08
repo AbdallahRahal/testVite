@@ -1,47 +1,23 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <p> Wé la rue</p>
-    </div>
-  </header>
-
-  <main>
-    <p>wé la rue 2</p>
-  </main>
+  <div>
+    <a href="https://dofus.com/fr/" target="_blank">
+      <img src="./assets/dofus.webp" alt="Logo Dofus" style="width: 200px; height: auto;">
+      <Quiz />
+    </a>
+  </div>
 </template>
 
-<style scoped>
-header {
-  line-height: 1.5;
-}
+<script setup>
+import Quiz from './views/Quiz.vue'
+import BackButton from './components/BackButton.vue';
+import { onMounted } from 'vue';
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
-</style>
+onMounted(() => {
+  const isDevelopment = window.location.hostname === 'localhost';
+  const favicon = document.createElement('link');
+  favicon.rel = 'icon';
+  favicon.type = 'image/png';
+  favicon.href = `${isDevelopment ? '' : '/dofusclass'}/dofus.webp`;
+  document.head.appendChild(favicon);
+});
+</script>
