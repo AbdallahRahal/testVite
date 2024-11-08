@@ -7,6 +7,9 @@ import vue from '@vitejs/plugin-vue'
 export default defineConfig({
   base: '/testVite/',
   publicPath: '/testVite/',
+  build: {
+    outDir: 'docs', // Remplacez "build" par le nom que vous souhaitez
+  },
   plugins: [
     vue(),
   ],
