@@ -2,8 +2,8 @@
   <div>
     <a href="https://dofus.com/fr/" target="_blank">
       <img src="./assets/dofus.webp" alt="Logo Dofus" style="width: 200px; height: auto;">
-      <Quiz />
     </a>
+    <Quiz />
   </div>
 </template>
 
